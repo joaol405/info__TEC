@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="555" type="image/x-icon">
+  <title>Website Multilíngue</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    [class*="col-"] {
+      float: left;
+      padding: 15px;
+    }
+
+    html {
+      font-family: "Lucida Sans", sans-serif;
+    }
+
+    .header {
+      background-color: #0D575B;
+      color: #ffffff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .header li:last-child {
+      margin-right: 0;
+    }
+
+    .header li a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      padding: 8px;
+      margin-bottom: 7px;
+      background-color: #0D575B;
+      color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .menu li:hover {
+      background-color: #007bff;
+    }
+
+    .aside {
+      background-color: #0D575B;
+      padding: 15px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .footer {
+      background-color: #0D575B;
+      color: #ffffff;
+      text-align: center;
+      font-size: 12px;
+      padding: 15px;
+      clear: both;
+      width: 100%;
+    }
+
+    /* Para desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    @media only screen and (max-width: 768px) {
+      /* Para telefones móveis: */
+      [class*="col-"] {
+        width: 100%;
+      }
+    }
+
+    .slider {
+      width: 80%;
+      margin: auto;
+    }
+
+    .slider img {
+      width: 75%; /* Alterando o tamanho das imagens */
+      height: auto;
+    }
+
+    #whatsapp-number,
+    #facebook-text,
+    #instagram-text {
+      display: none;
+    }
+
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .language-buttons button {
+      background-color: #0D575B;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .language-buttons button:hover {
+      background-color: #007bff;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+         <h1><img src="logosite.png" alt="Info_tec" style="width: 35%;"></h1>
+    <ul>
+      <li><a href="#" onclick="showContent('html-content')">HTML</a></li>
+      <li><a href="#" onclick="showContent('css-content')">CSS</a></li>
+      <li><a href="#" onclick="showContent('javascript-content')">JAVA SCRIPT</a></li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div class="language-buttons">
+        <button onclick="changeLanguage('pt')">Português</button>
+        <button onclick="changeLanguage('en')">Inglês</button>
+        <button onclick="changeLanguage('es')">Espanhol</button>
+      </div>
+      <section id="en-content" style="display:none;">
+        <h1>Who we are</h1>
+        <h1>Our Courses</h1>
+        <h1>Students Handbook</h1>
+        <h1>Welcome to our website!</h1>
+        <p>This is the English version of our website.</p>
+      </section>
+      
+      <section id="pt-content">
+        <h1>Quem Somos</h1>
+        <h1>Nossos Cursos</h1>
+        <h1>Manual do Aluno</h1>
+        <h1>Bem-vindo ao nosso site!</h1>
+        <p>Esta é a versão em Português do nosso site.</p>
+      </section>
+      
+      <section id="es-content" style="display:none;">
+        <h1>Quienes Somos</h1>
+        <h1>Nuestros Cursos</h1>
+        <h1>Manual del Estudiante</h1>
+        <h1>Bienvenido a nuestro sitio web!</h1>
+        <p>Esta es la versión en español de nuestro sitio web.</p>
+      </section>
+
+      <!-- Additional content for WhatsApp, Facebook, and Instagram -->
+      <section id="html-content" style="display:none;">
+        <div id="html-text">
+         
+         <div><img src="logohtml.jpg" alt="HTML"></div>
+          <p>HTML (HyperText Markup Language) é a linguagem fundamental para criar e estruturar páginas da web. Desenvolvida por Tim Berners-Lee, utiliza tags para definir diferentes elementos como texto, imagens, links e formulários. Evoluindo com versões como o HTML5, possibilita recursos avançados como elementos multimídia e APIs. Em conjunto com CSS e JavaScript, forma a base do desenvolvimento web moderno.</p>
+        </div>
+      </section>
+
+      <section id="css-content" style="display:none;">
+        <div id="css-text">
+          
+          <div><img src="logocss.jpg" alt="HTML"></div>
+          <p>CSS (Cascading Style Sheets) é uma linguagem usada para estilizar documentos HTML e XML. Ele separa o conteúdo da apresentação visual, permitindo controlar layout, cores, fontes e outros aspectos visuais de uma página da web. Com seletores, pseudo-classes e hierarquia de estilos, o CSS oferece flexibilidade para criar designs complexos e responsivos, contribuindo para interfaces atraentes e consistentes em diferentes dispositivos e navegadores.</p>
+        </div>
+      </section>
+
+      <section id="javascript-content" style="display:none;">
+        <div id="javascript-text">
+
+ <div><img src="logojs.jpg" alt="HTML"></div>
+                    <p>JavaScript é uma linguagem de programação usada principalmente para desenvolvimento web, permitindo criar interações dinâmicas e funcionalidades em páginas da web. Originalmente para scripts no navegador, agora também é usado no servidor com o Node.js. Sua sintaxe é baseada em ECMAScript, e possui muitas bibliotecas e frameworks como React e Angular. É essencial no desenvolvimento web e tem aplicações em aplicativos mobile, jogos e automação de tarefas.</p>
+        </div>
+      </section>
+    </div>
+    <div class="col-6">
+      <div class="slider">
+        <div><img src="hqdefaulthtml.jpg" alt="HTML"></div>
+        <div><img src="hqdefaultcss.jpg" alt="CSS"></div>
+        <div><img src="hqdefaultjs.jpg" alt="JavaScript"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adicione os vídeos aqui -->
+  <div class="videos">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sj0p9O85AIg" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/HtVRRHoASes" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vEwPnjqWQ-g" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <!-- Rodapé -->
+  <div class="footer">
+    <p>&copy; 2024 Info_Tec. Todos os direitos reservados.</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 2000
+      });
+    });
+
+    function changeLanguage(lang) {
+      // Esconder todas as seções de conteúdo
+      document.getElementById('pt-content').style.display = 'none';
+      document.getElementById('en-content').style.display = 'none';
+      document.getElementById('es-content').style.display = 'none';
+      
+      // Mostrar a seção correspondente ao idioma selecionado
+      document.getElementById(lang + '-content').style.display = 'block';
+    }
+
+    function showContent(contentId) {
+      var contents = document.querySelectorAll('section');
+      contents.forEach(function(content) {
+        content.style.display = 'none';
+      });
+      document.getElementById(contentId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
